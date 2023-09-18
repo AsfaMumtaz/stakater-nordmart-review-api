@@ -17,6 +17,7 @@ LABEL name="inventory" \
       release="1" \
       summary="Java Spring boot application"
 
+
 # Set working directory
 ENV HOME=/opt/app
 WORKDIR $HOME
