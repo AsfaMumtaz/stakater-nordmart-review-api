@@ -139,7 +139,6 @@ spec:
       - name: buildah
         runAfter:
           - unit-test
-          - create-git-tag
         taskRef:
           name: stakater-buildah-0.0.18
           kind: Task
@@ -200,8 +199,8 @@ spec:
           - buildah
           - sonarqube-scan
         taskRef:
-          name: stakater-rox-image-check-0.0.5
-          kind: Task
+          name: rox-image-check-test
+          kind: ClusterTask
         params:
           - name: IMAGE
             value: '$(params.image_registry):$(tasks.create-git-tag.results.GIT_TAG)'
